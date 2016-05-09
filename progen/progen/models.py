@@ -19,6 +19,7 @@ class userDetails(models.Model):
 	skills_set = models.CharField(max_length = 10000, blank=True, null=True)
 	project_title = models.CharField(max_length = 1000, blank=True, null=True)
 	project_desc = models.CharField(max_length  = 10000, blank=True, null=True)
+	project_url = models.CharField(max_length=10000, blank=True, null=True0)
 	exp_title=models.CharField(max_length=10000, blank=True, null=True)
 	exp_desc = models.CharField(max_length = 10000, blank=True, null=True)
 	achieve_title = models.CharField(max_length = 10000, blank=True, null=True)
