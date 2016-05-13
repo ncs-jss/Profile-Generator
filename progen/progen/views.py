@@ -17,31 +17,34 @@ from django.template import Context
 from progen.models import * 
 from datetime import datetime,timedelta
 import random,string,ast
+
 def home(request):
+	
 	"""this view is for the home page display"""
+
 	return render_to_response("index.html",context_instance=RequestContext(request))
 
-def signup(request):
-	"""signup for the user """
-	if not request.user.is_active:
-		if request.POST:
-			print "entered the if sectison"
-			username = request.POST['username']
-			email = request.POST['email']
-			password = request.POST['password']
-			firstname = request.POST['firstname']
-			lastname = request.POST['lastname']
-			try:
-				user = User.objects.create_user(username=username,email=email,password=password,first_name=firstname,last_name=lastname)
-				user.save()
-				return HttpResponseRedirect("/profile")
-			except:
-				return HttpResponse("This Id already exists")
-		else:
-			print "entered the else section"
-			return render_to_response("register.html",context_instance=RequestContext(request))
-	else:
-		return HttpResponseRedirect("/")	
+# def signup(request):
+# 	"""signup for the user """
+# 	if not request.user.is_active:
+# 		if request.POST:
+# 			print "entered the if section"
+# 			username = request.POST['username']
+# 			email = request.POST['email']
+# 			password = request.POST['password']
+# 			firstname = request.POST['firstname']
+# 			lastname = request.POST['lastname']
+# 			try:
+# 				user = User.objects.create_user(username=username,email=email,password=password,first_name=firstname,last_name=lastname)
+# 				user.save()
+# 				return HttpResponseRedirect("/profile")
+# 			except:
+# 				return HttpResponse("This Id already exists")
+# 		else:
+# 			print "entered the else section"
+# 			return render_to_response("register.html",context_instance=RequestContext(request))
+# 	else:
+# 		return HttpResponseRedirect("/")	
 
 def login(request):
 	""" Login view """
@@ -84,7 +87,7 @@ def changepassword(request):
 def profile(request):
 	""" profile editing view. User can update their profile using this view. """
 	userr = request.user.username	
-	if request.user.is_authenticated() :
+	if request.user.is_authenticated():
 		try:
 			u2 = userDetails.objects.get(user= userr )
 			new = 0
