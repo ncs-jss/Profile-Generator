@@ -22,7 +22,7 @@ def home(request):
 	
 	"""this view is for the home page display"""
 
-	return render_to_response("index.html",context_instance=RequestContext(request))
+	return render_to_response("index1.html",context_instance=RequestContext(request))
 
 # def signup(request):
 # 	"""signup for the user """

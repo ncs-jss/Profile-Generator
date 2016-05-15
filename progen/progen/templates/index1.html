@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Nibble Connect</title>
+	 	
+	 	<link rel="stylesheet" href="{% static "css/style.css"%}">
+	 	<link rel="stylesheet" href="{% static "css/font-awesome-4.6.2/css/font-awesome.min.css"%}">
+	</head>
+
+
+
+	<body>
+
+		<div class="head">	
+
+			<a class="brand" href="">Nibble Computer Society</a>
+
+			<ul class="left">
+				<li><a id="check" href="dashboard.html">Home</a></li>
+				<li><a id="check" href="about.html">About</a></li>
+				<li><a id="login" href="#Login" onclick="modal()"> Login </a> </li>
+			</ul>
+
+		</div>
+
+
+		<div class="login_outer">
+
+			<img id="login" src="ab-1.jpg">
+
+			<div class="footer">
+				<div id="footer"><a href="www.hackncs.com">&copy; Nibble Computer Society</a></div>
+			</div>
+		</div>
+
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+
+		  <div class="modal-content">
+		    <span class="close" onclick="closee()">x</span><br><br><br>
+		    	<div id="edit">
+		    		<label>Enter Your Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<input type="text" name="username" value="" placeholder="Enter Your username"><br><br>
+					<label>Enter Your Password :&nbsp;&nbsp;</label>
+					<input type="password" name="password" value="" placeholder="Enter Your password"><br><br>
+					<input class="button" type="button" value="Submit"> 
+					
+				</div>
+		  </div>
+		</div>
+
+		
+
+	</body>
+
+	<script src="js/index.js"></script>
+
+</html>
+
